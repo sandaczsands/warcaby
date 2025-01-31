@@ -59,18 +59,18 @@ int main(int argc, char *argv[]) {
             break;
         }
 
-        if (strcmp(buffer, "Black wins!") == 0 || strcmp(buffer, "White wins!") == 0) {
+        if (strstr(buffer, "Black wins!")!= NULL || strstr(buffer, "White wins!") != NULL) {
             printf("%s\n", buffer);
             break;
             
         }
         printf("%s\n", buffer);
 
-        if (strcmp(buffer, "Your opponent quit game. Ending the game.") == 0 ) {
+        if (strstr(buffer, "Your opponent quit game. Ending the game.") != NULL ) {
             break; 
         }
         
-        if (strcmp(buffer, "Enter your move (like 5243 or 'exit' to quit the game): ") == 0 ) {
+        if (strstr(buffer, "Enter your move (like 5243 or 'exit' to quit the game): ") != NULL ) {
             memset(buffer, 0, sizeof(buffer));
             memset(message, 0, sizeof(message));
             scanf("%s", message);
